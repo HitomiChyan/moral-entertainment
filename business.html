@@ -117,21 +117,36 @@
         .feature-card h4 { color: #fff; margin-bottom: 10px; font-size: 17px; }
         .feature-card p { color: var(--text-sub); font-size: 13.5px; line-height: 1.6; }
 
-        .form-container { 
-            background: var(--surface); 
-            padding: 40px; 
+        /* 精美引導按鈕區塊 */
+        .portal-box { 
+            background: linear-gradient(135deg, rgba(14, 15, 23, 0.95), rgba(142, 166, 255, 0.1)); 
+            padding: 50px 30px; 
             border-radius: 16px; 
-            border: 1px solid var(--moral-purple); 
+            border: 1px solid rgba(142, 166, 255, 0.4); 
+            text-align: center; 
             margin-top: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
-        .form-group { margin-bottom: 24px; }
-        .form-group label { display: block; margin-bottom: 8px; color: var(--text-main); font-size: 14px; }
-        .form-control { width: 100%; padding: 12px 16px; background: var(--bg-deep); border: 1px solid var(--border-color); border-radius: 8px; color: #fff; font-family: inherit; font-size: 14px; }
-        .form-control:focus { outline: none; border-color: var(--moral-purple); }
-        textarea.form-control { min-height: 150px; resize: vertical; }
+        .portal-box h3 { color: #fff; font-size: 24px; margin-bottom: 12px; font-family: 'Cinzel', serif; }
+        .portal-box p { color: var(--text-sub); font-size: 15px; max-width: 600px; margin: 0 auto 24px; line-height: 1.7; }
         
-        .btn-apply { display: block; width: 100%; text-align: center; background: var(--moral-gradient); color: #050508; padding: 16px; border-radius: 25px; font-weight: 700; font-size: 15px; text-decoration: none; letter-spacing: 2px; border: none; cursor: pointer; transition: opacity 0.3s; }
-        .btn-apply:hover { opacity: 0.9; }
+        .btn-portal { 
+            display: inline-block; 
+            background: var(--moral-gradient); 
+            color: #050508; 
+            padding: 16px 40px; 
+            border-radius: 30px; 
+            font-weight: 700; 
+            font-size: 16px; 
+            text-decoration: none; 
+            letter-spacing: 2px; 
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 4px 15px rgba(196, 148, 249, 0.3);
+        }
+        .btn-portal:hover { 
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(196, 148, 249, 0.5);
+        }
 
         @media (max-width: 900px) {
             .sidebar { position: relative; width: 100%; height: auto; }
@@ -193,70 +208,20 @@
                     </div>
                 </div>
 
-                <!-- 填寫表單區塊 (改為 mailto 原生寄信) -->
+                <!-- 外部商務表單引導區塊 -->
                 <div class="section-block" id="apply-form">
                     <h2><i class="fa-solid fa-file-signature"></i> 填寫工商需求表單</h2>
-                    <div class="section-desc">請填寫下方資訊，點擊按鈕將自動為您開啟信箱並打包資料寄送至商務官方信箱。</div>
+                    <div class="section-desc">有興趣與我們旗下的藝人展開專案合作嗎？請點擊下方按鈕前往官方商務洽詢表單。</div>
                     
-                    <div class="form-container">
-                        <form id="bizForm">
-                            <div class="form-group">
-                                <label>貴單位 / 品牌名稱 *</label>
-                                <input type="text" id="b_company" class="form-control" required placeholder="請輸入品牌名稱">
-                            </div>
-                            <div class="form-group">
-                                <label>聯絡信箱 Email *</label>
-                                <input type="email" id="b_email" class="form-control" required placeholder="example@brand.com">
-                            </div>
-                            <div class="form-group">
-                                <label>希望合作的藝人</label>
-                                <select id="b_talent" class="form-control">
-                                    <option value="由官方推薦適合人選">由官方推薦適合人選</option>
-                                    <option value="艾爾默 (Ailmer_Akuma)">艾爾默 (Ailmer_Akuma)</option>
-                                    <option value="0913lu (小鹿9)">0913lu (小鹿9)</option>
-                                    <option value="阿令啦 (rling0511)">阿令啦 (rling0511)</option>
-                                    <option value="條碼狐狸 (i1i1ifox)">條碼狐狸 (i1i1ifox)</option>
-                                    <option value="藍莓起司 (BlueberryCheese69)">藍莓起司 (BlueberryCheese69)</option>
-                                    <option value="麥克關子 (mikeke0423)">麥克關子 (mikeke0423)</option>
-                                    <option value="舞瞳喵 (HitomiCyan)">舞瞳喵 (HitomiCyan)</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label>合作內容簡述與預算需求 *</label>
-                                <textarea id="b_intro" class="form-control" required placeholder="請簡述預計推廣的產品、預算區間或檔期需求..."></textarea>
-                            </div>
-                            <button type="button" onclick="sendBizEmail()" class="btn-apply">產生工商信件並寄出</button>
-                        </form>
+                    <div class="portal-box">
+                        <h3>BUSINESS INQUIRY</h3>
+                        <p>讓我們為您的品牌量身打造最精準、高轉換的虛擬娛樂行銷方案。</p>
+                        <!-- 請將 href 改為您的 Google 工商表單網址 -->
+                        <a href="https://forms.gle/您的Google工商表單網址" target="_blank" class="btn-portal">填寫線上工商洽詢表單</a>
                     </div>
                 </div>
             </main>
         </div>
     </div>
-
-    <!-- 原生 mailto 打包寄出腳本 -->
-    <script>
-        function sendBizEmail() {
-            const company = document.getElementById('b_company').value;
-            const email = document.getElementById('b_email').value;
-            const talent = document.getElementById('b_talent').value;
-            const intro = document.getElementById('b_intro').value;
-
-            if(!company || !email || !intro) {
-                alert('請完整填寫所有必填欄位！');
-                return;
-            }
-
-            const subject = encodeURIComponent(`【工商合作邀約】${company} 的專案需求`);
-            const body = encodeURIComponent(
-                `【MORAL 寓意娛樂 - 商務合作需求表單】\n\n` +
-                `1. 品牌/單位名稱：${company}\n` +
-                `2. 聯絡信箱：${email}\n` +
-                `3. 指定合作藝人：${talent}\n\n` +
-                `4. 合作內容與需求簡述：\n${intro}\n`
-            );
-
-            window.location.href = `mailto:moral.entertainment.co@gmail.com?subject=${subject}&body=${body}`;
-        }
-    </script>
 </body>
 </html>
