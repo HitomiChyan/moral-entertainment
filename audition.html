@@ -40,20 +40,36 @@
         .notice-list { list-style-type: decimal; padding-left: 20px; color: var(--text-sub); font-size: 14px; line-height: 1.8; }
         .notice-list li { margin-bottom: 8px; }
 
-        /* 表單專屬樣式 */
-        .form-container { background: rgba(0,0,0,0.2); padding: 32px; border-radius: 12px; border: 1px solid var(--moral-purple); margin-top: 24px; }
-        .form-group { margin-bottom: 20px; }
-        .form-group label { display: block; margin-bottom: 8px; color: var(--text-main); font-size: 14.5px; }
-        .form-control { width: 100%; padding: 12px 16px; background: var(--bg-deep); border: 1px solid var(--border-color); border-radius: 8px; color: #fff; font-family: inherit; font-size: 14px; }
-        .form-control:focus { outline: none; border-color: var(--moral-pink); }
-        textarea.form-control { min-height: 120px; resize: vertical; }
+        /* 精美引導卡片區塊 (取代舊表單空白處) */
+        .apply-cta-box {
+            background: linear-gradient(135deg, rgba(14, 15, 23, 0.95), rgba(196, 148, 249, 0.1));
+            padding: 50px 30px;
+            border-radius: 16px;
+            border: 1px solid var(--moral-purple);
+            text-align: center;
+            margin-top: 24px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        .apply-cta-box h3 { color: #fff; font-size: 24px; margin-bottom: 12px; font-family: 'Cinzel', serif; }
+        .apply-cta-box p { color: var(--text-sub); font-size: 15px; max-width: 600px; margin: 0 auto 24px; line-height: 1.7; }
         
-        .btn-apply { display: block; width: 100%; text-align: center; background: var(--moral-gradient); color: #000; padding: 16px; border-radius: 8px; font-weight: 700; font-size: 16px; text-decoration: none; letter-spacing: 2px; border: none; cursor: pointer; transition: opacity 0.3s; }
-        .btn-apply:hover { opacity: 0.9; }
-        
-        .form-row { display: flex; gap: 20px; }
-        .form-row .form-group { flex: 1; }
-        @media (max-width: 600px) { .form-row { flex-direction: column; gap: 0; } }
+        .btn-apply-portal { 
+            display: inline-block; 
+            background: var(--moral-gradient); 
+            color: #050508; 
+            padding: 16px 40px; 
+            border-radius: 30px; 
+            font-weight: 700; 
+            font-size: 16px; 
+            text-decoration: none; 
+            letter-spacing: 2px; 
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 4px 15px rgba(196, 148, 249, 0.3);
+        }
+        .btn-apply-portal:hover { 
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(196, 148, 249, 0.5);
+        }
     </style>
 </head>
 <body>
@@ -185,105 +201,19 @@
                 </ul>
             </div>
 
-            <!-- 線上報名表單區塊 (改為 mailto 原生寄信) -->
+            <!-- 精美報名按鈕區塊 -->
             <div class="section-block" id="apply-form">
-                <h2><i class="fa-solid fa-file-signature"></i> 徵選報名表單</h2>
-                <div class="section-desc">請確實填寫以下資訊，才藝展示影片建議長度為 3-5 分鐘（無須露臉，展現您的聲音魅力與特質即可）。點擊下方按鈕將自動幫您打包信件並開啟您的信箱寄出。</div>
+                <h2><i class="fa-solid fa-file-signature"></i> 立即投遞履歷</h2>
+                <div class="section-desc">準備好展現自我了嗎？請點擊下方按鈕前往官方線上應徵通道，填寫您的個人資料與才藝展示影片連結。</div>
                 
-                <div class="form-container">
-                    <form id="mailForm">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label>真實姓名 / 常用暱稱 *</label>
-                                <input type="text" id="f_name" class="form-control" required placeholder="請輸入姓名或暱稱">
-                            </div>
-                            <div class="form-group">
-                                <label>出生年月日 *</label>
-                                <input type="date" id="f_birth" class="form-control" required>
-                            </div>
-                        </div>
-
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label>聯絡信箱 Email *</label>
-                                <input type="email" id="f_email" class="form-control" required placeholder="example@mail.com">
-                            </div>
-                            <div class="form-group">
-                                <label>Discord ID *</label>
-                                <input type="text" id="f_discord" class="form-control" required placeholder="例如：moral_vtuber#1234">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label>目前經營的頻道/社群連結 (若無經驗請填「無」) *</label>
-                            <input type="text" id="f_social" class="form-control" required placeholder="YouTube, Twitch, 或 X (Twitter) 連結">
-                        </div>
-
-                        <div class="form-group">
-                            <label>才藝展示影片連結 (YouTube 不公開連結 或 Google 雲端硬碟) *</label>
-                            <input type="url" id="f_video" class="form-control" required placeholder="請貼上影片網址，並確保開啟權限">
-                        </div>
-
-                        <div class="form-group">
-                            <label>專長與加分條件簡述 *</label>
-                            <input type="text" id="f_skill" class="form-control" required placeholder="例如：擅長 FPS 遊戲、精通日文、有影片剪輯經驗等...">
-                        </div>
-
-                        <div class="form-group">
-                            <label>自我介紹與為什麼想加入寓意娛樂？ *</label>
-                            <textarea id="f_intro" class="form-control" required placeholder="請讓我們多認識你一點！分享你的實況風格、個性，或是未來想達成的目標。"></textarea>
-                        </div>
-                        
-                        <div class="form-group" style="display: flex; align-items: center; gap: 10px; margin-bottom: 24px;">
-                            <input type="checkbox" required id="consentCheck" style="width: 18px; height: 18px; cursor: pointer;">
-                            <label for="consentCheck" style="margin-bottom: 0; font-size: 13.5px; color: var(--text-sub); cursor: pointer;">我已詳細閱讀徵選條件與注意事項，並保證所填寫資料均為屬實。</label>
-                        </div>
-
-                        <button type="button" onclick="sendEmail()" class="btn-apply">產生報名信件並寄出</button>
-                    </form>
+                <div class="apply-cta-box">
+                    <h3>JOIN MORAL ENTERTAINMENT</h3>
+                    <p>開啟您的虛擬星光旅程，讓世界看見屬於您的獨特寓言故事。</p>
+                    <!-- 請將下面的 href="您的Google表單網址" 替換成你們實際的表單連結 -->
+                    <a href="https://forms.gle/您的Google徵選表單網址" target="_blank" class="btn-apply-portal">填寫線上徵選表單</a>
                 </div>
             </div>
         </main>
     </div>
-
-    <!-- 原生 mailto 打包寄出腳本 -->
-    <script>
-        function sendEmail() {
-            const name = document.getElementById('f_name').value;
-            const birth = document.getElementById('f_birth').value;
-            const email = document.getElementById('f_email').value;
-            const discord = document.getElementById('f_discord').value;
-            const social = document.getElementById('f_social').value;
-            const video = document.getElementById('f_video').value;
-            const skill = document.getElementById('f_skill').value;
-            const intro = document.getElementById('f_intro').value;
-            const consent = document.getElementById('consentCheck').checked;
-
-            if(!name || !email || !discord || !video || !intro) {
-                alert('請完整填寫所有必填欄位！');
-                return;
-            }
-
-            if(!consent) {
-                alert('請勾選同意注意事項與保證條款！');
-                return;
-            }
-
-            const subject = encodeURIComponent(`【藝人徵選申請】${name} 的報名履歷`);
-            const body = encodeURIComponent(
-                `【MORAL 寓意娛樂 - 藝人常態徵選報名】\n\n` +
-                `1. 姓名/暱稱：${name}\n` +
-                `2. 生日：${birth}\n` +
-                `3. 聯絡信箱：${email}\n` +
-                `4. Discord ID：${discord}\n` +
-                `5. 現有社群連結：${social}\n` +
-                `6. 徵選影片連結：${video}\n` +
-                `7. 專長簡述：${skill}\n\n` +
-                `8. 自我介紹與動機：\n${intro}\n`
-            );
-
-            window.location.href = `mailto:moral.entertainment.co@gmail.com?subject=${subject}&body=${body}`;
-        }
-    </script>
 </body>
 </html>
