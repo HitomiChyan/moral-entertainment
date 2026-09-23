@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>社群規範 | MORAL 寓意娛樂</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* 規範頁面專屬的折疊面板樣式 */
+        details {
+            background: var(--surface);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            margin-bottom: 16px;
+            transition: all 0.3s ease;
+        }
+        details[open] {
+            border-color: var(--moral-purple);
+            box-shadow: 0 4px 20px rgba(196, 148, 249, 0.1);
+        }
+        summary {
+            padding: 20px 24px;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-main);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            list-style: none;
+        }
+        summary:hover {
+            color: var(--moral-pink);
+        }
+        summary::-webkit-details-marker { display: none; }
+        summary::after {
+            content: '\f078'; /* FontAwesome 的向下箭頭 */
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: var(--moral-purple);
+            transition: transform 0.3s ease;
+        }
+        details[open] summary::after {
+            transform: rotate(180deg);
+        }
+        .details-content {
+            padding: 0 24px 24px;
+            color: var(--text-sub);
+            font-size: 14.5px;
+            line-height: 1.8;
+        }
+        .details-content h3 {
+            color: var(--moral-pink);
+            font-size: 16px;
+            margin: 20px 0 10px;
+            border-left: 3px solid var(--moral-purple);
+            padding-left: 10px;
+        }
+        .details-content ul {
+            padding-left: 20px;
+            margin-bottom: 16px;
+        }
+        .details-content li {
+            margin-bottom: 8px;
+        }
+        .highlight-text {
+            color: #fff;
+            font-weight: 500;
+        }
+        .faq-box {
+            background: rgba(0,0,0,0.3);
+            padding: 16px;
+            border-radius: 8px;
+            margin-top: 16px;
+            border-left: 2px solid var(--moral-pink);
+        }
+    </style>
+</head>
+<body>
+    <div class="layout">
+        <!-- 側邊欄 -->
+        <aside class="sidebar">
+            <a href="index.html"><img src="IMG_7225.png" alt="MORAL" class="sidebar-logo"></a>
+            <ul class="nav-menu">
+                <li><a href="index.html">首頁 / Home</a></li>
+                <li><a href="business.html">工商合作 / Business</a></li>
+                <li><a href="guidelines.html" class="active">社群規範 / Guidelines</a></li>
+                <li><a href="audition.html">藝人徵選 / Audition</a></li>
+                <li><a href="partner.html">合作夥伴 / Partner</a></li>
+            </ul>
+            
+            <div class="official-socials">
+                <div class="social-title">OFFICIAL LINKS</div>
+                <div class="social-grid">
+                    <a href="https://www.facebook.com/profile.php?id=61594036010677" class="social-icon" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/moral.entertainment.co/" class="social-icon" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.threads.com/@moral.entertainment.co" class="social-icon" target="_blank"><i class="fa-brands fa-threads"></i></a>
+                    <a href="https://x.com/moralentertain" class="social-icon" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://discord.gg/QrUsnqxXQa" class="social-icon" target="_blank"><i class="fa-brands fa-discord"></i></a>
+                    <a href="https://www.twitch.tv/moralentertainment" class="social-icon" target="_blank"><i class="fa-brands fa-twitch"></i></a>
+                    <a href="mailto:moral.entertainment.co@gmail.com" class="social-icon"><i class="fa-solid fa-envelope"></i></a>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <h1 class="page-title">社群與創作規範 Guidelines</h1>
+            <p style="margin-bottom: 30px; color: var(--text-sub); line-height: 1.8;">
+                感謝大家對寓意娛樂（MORAL）及旗下藝人的喜愛與支持！我們鼓勵粉絲在遵守本指南與社群常識的前提下自由創作。<br>
+                點擊下方各類別標題，以查看詳細的官方規範說明。
+            </p>
+
+            <!-- 1. 官方商品與數位內容規範 -->
+            <details>
+                <summary>一、官方商品與數位內容規範</summary>
+                <div class="details-content">
+                    <p>本公司所發行之全部官方商品（包含但不限於實體周邊、數位語音、影音內容、限量商品、簽名商品等），均適用以下規範，以維護公平交易秩序、保障創作者著作權益及消費者合法權益。</p>
+                    
+                    <h3>實體商品轉售與交易規範</h3>
+                    <ul>
+                        <li><span class="highlight-text">禁止競標哄抬：</span>嚴禁於任何網路拍賣平台、二手交易社群或公開論壇以競標（拍賣）方式轉售本公司商品，以避免不合理之價格炒作與市場投機行為。</li>
+                        <li><span class="highlight-text">一般商品轉售：</span>除特別標註禁止轉售之物品外，一般商品之轉售行為與轉售定價，官方原則上不主動干涉。</li>
+                        <li><span class="highlight-text">非賣品限制：</span>標註 NOT FOR SALE 或 NOT FOR RESALE 之物品（如活動贈品、購買特典、公關品等），嚴禁以任何形式進行有償轉售。</li>
+                        <li><span class="highlight-text">交易免責聲明：</span>因買賣雙方私下轉售、代購等衍生之交易糾紛、詐騙、商品毀損或財產損失，本公司概不負任何法律與賠償責任。</li>
+                        <li><span class="highlight-text">錄影存證：</span>收貨開箱請務必全程錄影。若未提供完整開箱影片，恕無法受理任何缺損補發或換貨申請。</li>
+                        <li><span class="highlight-text">瑕疵標準：</span>大量工業製品之輕微劃痕、微小氣泡、製程痕跡、極小色點等不影響主體美觀之狀況，非屬瑕疵。僅接受「大型劃痕、斷裂、缺件、嚴重印刷錯誤等嚴重瑕疵」。請於收貨 7 日內檢附影像證明聯繫客服，逾期視同驗收完成。</li>
+                        <li><span class="highlight-text">隨機性聲明：</span>隨機特典（如親簽）之中獎機率係依活動設定而定，購買多組並不保證必然獲得，不得以未中獎為理由要求退貨、換貨或補償。</li>
+                    </ul>
+
+                    <h3>數位內容著作權使用規範</h3>
+                    <p>未經本公司事前正式書面授權，嚴禁下列行為：</p>
+                    <ul>
+                        <li><span class="highlight-text">轉載與重製：</span>以任何形式轉載、重製、截取、側錄、轉檔或公開發布數位內容。</li>
+                        <li><span class="highlight-text">公開傳輸與播放：</span>於公開平台公開播送、播放或作為背景素材。</li>
+                        <li><span class="highlight-text">分發與轉讓：</span>將數位內容進行轉售、合購分攤、出租、贈與或以任何雲端連結分享。</li>
+                        <li><span class="highlight-text">衍生與商用：</span>將內容用於二次創作、商業宣傳、AI 模型訓練/生成或其他商業用途。</li>
+                    </ul>
+                </div>
+            </details>
+
+            <!-- 2. 二次創作規範 -->
+            <details>
+                <summary>二、二次創作規範</summary>
+                <div class="details-content">
+                    <h3>基本創作規則</h3>
+                    <ul>
+                        <li><span class="highlight-text">尊重藝人與形象：</span>創作時請尊重本公司所屬藝人、其他創作者及全體粉絲。切勿製作會引起本公司所屬藝人反感、明顯有損及本公司所屬藝人形象之創作物。</li>
+                        <li><span class="highlight-text">嚴禁仿冒與重印：</span>請勿直接利用官方素材進行二次發布、重印行為；同時，請避免模仿、假冒官方名義（包括角色 RP 帳號）。</li>
+                        <li><span class="highlight-text">AI 相關限制：</span>嚴禁使用生成式 AI 創作，亦禁止擷取本公司藝人之聲音、影像素材用於 AI 模型訓練。</li>
+                        <li><span class="highlight-text">原創曲翻唱與二次創作：</span>歡迎進行翻唱、演奏或重新編曲，並公開發表於影音平台。惟嚴禁進行未授權之數位串流發行或實體商品化販售；發布時請於影片說明欄標註原曲資訊與官方原曲連結。</li>
+                        <li><span class="highlight-text">禁止表現之內容：</span>特定政治立場、宗教內容、R18G 表現（血腥獵奇）、中傷他人等經本公司判斷不適合之表現。</li>
+                    </ul>
+
+                    <h3>Art Tags 使用規則</h3>
+                    <ul>
+                        <li><span class="highlight-text">專標專用：</span>發表內容若非為「創作相關」類型時，請避免使用官方 Art Tag。</li>
+                        <li><span class="highlight-text">敏感內容隔離：</span>R-18 相關內容，嚴禁使用官方 Art Tag，並請創作者務必自行開啟各社群平台之年齡敏感內容防護措施。</li>
+                    </ul>
+                    <p>若有任何疑問，歡迎使用『二次創作規則詢問』作為信件標題來信官方信箱（moral.entertainment.co@gmail.com）詢問。</p>
+                </div>
+            </details>
+
+            <!-- 3. 精華剪輯規範 -->
+            <details>
+                <summary>三、精華剪輯與營利規範</summary>
+                <div class="details-content">
+                    <h3>基本剪輯規範</h3>
+                    <ul>
+                        <li><span class="highlight-text">公開內容範圍：</span>您可以對本公司所屬藝人公開發布之一般直播內容進行剪輯。會員限定或是藝人指定不可剪輯內容請勿剪輯。</li>
+                        <li><span class="highlight-text">發布時間限制：</span>直播未結束請勿發表該場次之精華片段，請於直播結束轉檔完成後再進行發表。</li>
+                        <li><span class="highlight-text">標題與封面縮圖守則：</span>請務必維持事實與適當分寸，嚴禁使用斷章取義、聳動造謠、或具有侮辱性質之文字與圖像。</li>
+                        <li><span class="highlight-text">剪輯誠信原則：</span>嚴禁透過惡意剪接、拼接音訊等方式扭曲原意。</li>
+                    </ul>
+
+                    <h3>營利資格申請與管理規範</h3>
+                    <p>若欲將含有寓意娛樂藝人內容之剪輯頻道開啟 YouTube 營利功能，申請者須符合以下條件，並以信件標題『精華營利申請』寄信至官方信箱提出申請：</p>
+                    <ul>
+                        <li>頻道已符合 YouTube 合作夥伴計畫（YPP）營利資格。</li>
+                        <li>近 30 天內發佈至少 3 部與寓意娛樂所屬藝人相關之原創剪輯作品。</li>
+                        <li>頻道過往無惡意剪輯、造謠、煽動對立或違規紀錄。</li>
+                    </ul>
+                    <p>取得營利授權後，若頻道連續 3 個月以上未發布本公司相關之剪輯作品，或出現嚴重違反規範之行為，本公司有權收回營利授權。</p>
+                </div>
+            </details>
+
+            <!-- 4. 粉絲自製周邊規範 -->
+            <details>
+                <summary>四、粉絲自製周邊規範</summary>
+                <div class="details-content">
+                    <p>本公司鼓勵粉絲基於同好交流與個人興趣進行創作，並適用以下實體商品販售規範：</p>
+                    <ul>
+                        <li><span class="highlight-text">商業販售定義：</span>公司行號、營利性法人、大規模商業販售者，若有意將二創作品製成商品公開販售，必須事前徵得本公司許可。個人及同人社團基於同好交流、個人興趣所製作之限量同人創作物則不在此限。</li>
+                        <li><span class="highlight-text">嚴禁競標：</span>公開販售之二創商品，嚴禁於任何二手交易或拍賣平台以競標方式哄抬價格。</li>
+                        <li><span class="highlight-text">立體物限制：</span>實體開模、縫製與 3D 製作物（如等身抱枕套、棉花娃、模型手辦等）不得公開販售。個人自製收藏無需詢問，但不得涉及任何營利或變相販售行為。</li>
+                        <li><span class="highlight-text">素材原創性：</span>商品之圖面素材請遵照二創規範創作，嚴禁直接截取、盜用或重印官方素材（包含官方立繪、Logo 等）進行商品化。</li>
+                        <li><span class="highlight-text">禁止純商業轉包：</span>嚴禁非創作者以純商業營利為目的，委託第三方繪製素材後進行商品化販售之行為。</li>
+                    </ul>
+                </div>
+            </details>
+
+            <!-- 5. 粉絲應援與活動規範 -->
+            <details>
+                <summary>五、粉絲應援與活動規範</summary>
+                <div class="details-content">
+                    <h3>素材使用與金流限制</h3>
+                    <ul>
+                        <li><span class="highlight-text">官方素材：</span>除了直播檔案外，禁止使用官方提供之任何素材（包含立繪、會限圖等）作為應援物發放。限定素材（如拍立得）僅限個人實體展示，不得掃描印製。</li>
+                        <li><span class="highlight-text">直播檔案：</span>允許於應援活動現場展示播放，但禁止用於商品製作、商業宣傳、販售或印製成二次配布品發放。</li>
+                        <li><span class="highlight-text">金流與募資限制：</span>禁止任何涉及商品販售等營利項目。募資僅能用於應援實際支出，不得設計任何形式之回饋品或對價交換（例：募資送小卡）。</li>
+                        <li><span class="highlight-text">公開金流計畫：</span>凡涉及金流（如公車廣告募資），須將完整資金運用計畫書公開於社群。</li>
+                    </ul>
+
+                    <h3>店家合作與分送限制</h3>
+                    <ul>
+                        <li><span class="highlight-text">店家合作：</span>屬粉絲自費預付並分送應援物（如預付飲料），數量需 ≤200 份。不得與消費綁定（例：買餐點送應援物）。</li>
+                        <li><span class="highlight-text">數量上限：</span>一切應援物數量上限皆為 200 份。超過上限者一律視為營利性質，禁止舉辦。</li>
+                    </ul>
+
+                    <div class="faq-box">
+                        <h4 style="color: #fff; margin-bottom: 8px;">💡 簡易判斷公式</h4>
+                        <p>「非營利/透明金流」＋「無回饋品」＋「非店家商業綁定」＋「應援物 ≤200」＋「無限定素材再利用」＝ 合規同好性質活動。</p>
+                        <ul style="margin-top: 12px; margin-bottom: 0;">
+                            <li>✅ 私下分攤（蛋糕、場租） → 合規</li>
+                            <li>❌ 公開募資＋募資限定回饋品 → 禁止</li>
+                            <li>✅ 預付 200 杯內飲料免費領取 → 合規</li>
+                            <li>❌ 購買咖啡廳餐點才送應援物 → 禁止</li>
+                        </ul>
+                    </div>
+                </div>
+            </details>
+
+            <p style="text-align: center; margin-top: 40px; font-size: 13px; color: var(--text-sub);">
+                本公司保有隨時修正本規範之權利，若有未盡事宜，悉依本公司相關公告辦理；本公司保留最終解釋及決定權利。<br>
+                最後感謝您對 MORAL 寓意娛樂的喜愛，期望能帶給您源源不絕的創作靈感。
+            </p>
+        </main>
+    </div>
+</body>
+</html>
