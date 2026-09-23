@@ -87,7 +87,6 @@
                 <p>我們期盼在接下來帶來更不一樣的內容與方向。<br>只要你有長才，不管是美麗的歌聲、強勁的遊戲實力、幽默有趣的聊天內容，還是富有特色的聲音表演能力，我們都歡迎你加入寓意，成為溫暖世界的太陽！</p>
             </div>
 
-            <!-- 關於我們、資源提供、徵選條件、徵選流程、注意事項 保持不變 -->
             <div class="section-block">
                 <h2><i class="fa-solid fa-book-open"></i> 關於我們 ABOUT US</h2>
                 <div class="section-desc">
@@ -139,7 +138,7 @@
                     <li>能配合公司執行企劃、活動、宣傳與商業合作案。</li>
                     <li>願意持續學習並精進直播內容（企劃、表演）。</li>
                     <li>強烈的表演慾望與長期進行演藝活動的決心。</li>
-                    <li>每月至少需有 50 小時以上進行直播、節目準備、公司內部溝通與經營社群。</li>
+                    <li>每月至少需有 30 小時以上進行直播、節目準備、公司內部溝通與經營社群。</li>
                     <li>長期並且積極經營自身社群媒體，願意思考頻道經營策略。</li>
                     <li>目前無任何經紀合約、專屬合約或類似性質之協議在身。</li>
                 </ul>
@@ -175,7 +174,7 @@
                 </div>
             </div>
 
-            <div class="section-block" style="margin-bottom: 20px;">
+            <div class="section-block">
                 <h2><i class="fa-solid fa-circle-exclamation"></i> 注意事項 NOTICE</h2>
                 <ul class="notice-list">
                     <li>填寫表單即代表您同意我們進行資料蒐集。您在表單填寫的所有資料僅供內部評估使用，絕不對外公開並嚴格保密。</li>
@@ -186,56 +185,53 @@
                 </ul>
             </div>
 
-            <!-- 線上報名表單區塊 -->
+            <!-- 線上報名表單區塊 (改為 mailto 原生寄信) -->
             <div class="section-block" id="apply-form">
                 <h2><i class="fa-solid fa-file-signature"></i> 徵選報名表單</h2>
-                <div class="section-desc">請確實填寫以下資訊，才藝展示影片建議長度為 3-5 分鐘（無須露臉，展現您的聲音魅力與特質即可）。</div>
+                <div class="section-desc">請確實填寫以下資訊，才藝展示影片建議長度為 3-5 分鐘（無須露臉，展現您的聲音魅力與特質即可）。點擊下方按鈕將自動幫您打包信件並開啟您的信箱寄出。</div>
                 
                 <div class="form-container">
-                    <form id="auditionForm" action="https://formsubmit.co/moral.entertainment.co@gmail.com" method="POST">
-                        <input type="hidden" name="_subject" value="【藝人徵選申請】來自官網的熱血報名！">
-                        <input type="hidden" name="_captcha" value="false">
-
+                    <form id="mailForm">
                         <div class="form-row">
                             <div class="form-group">
                                 <label>真實姓名 / 常用暱稱 *</label>
-                                <input type="text" name="姓名或暱稱" class="form-control" required placeholder="請輸入姓名或暱稱">
+                                <input type="text" id="f_name" class="form-control" required placeholder="請輸入姓名或暱稱">
                             </div>
                             <div class="form-group">
                                 <label>出生年月日 *</label>
-                                <input type="date" name="生日" class="form-control" required>
+                                <input type="date" id="f_birth" class="form-control" required>
                             </div>
                         </div>
 
                         <div class="form-row">
                             <div class="form-group">
                                 <label>聯絡信箱 Email *</label>
-                                <input type="email" name="email" class="form-control" required placeholder="example@mail.com">
+                                <input type="email" id="f_email" class="form-control" required placeholder="example@mail.com">
                             </div>
                             <div class="form-group">
                                 <label>Discord ID *</label>
-                                <input type="text" name="Discord_ID" class="form-control" required placeholder="例如：moral_vtuber#1234">
+                                <input type="text" id="f_discord" class="form-control" required placeholder="例如：moral_vtuber#1234">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label>目前經營的頻道/社群連結 (若無經驗請填「無」) *</label>
-                            <input type="text" name="社群連結" class="form-control" required placeholder="YouTube, Twitch, 或 X (Twitter) 連結">
+                            <input type="text" id="f_social" class="form-control" required placeholder="YouTube, Twitch, 或 X (Twitter) 連結">
                         </div>
 
                         <div class="form-group">
                             <label>才藝展示影片連結 (YouTube 不公開連結 或 Google 雲端硬碟) *</label>
-                            <input type="url" name="徵選影片連結" class="form-control" required placeholder="請貼上影片網址，並確保開啟權限">
+                            <input type="url" id="f_video" class="form-control" required placeholder="請貼上影片網址，並確保開啟權限">
                         </div>
 
                         <div class="form-group">
                             <label>專長與加分條件簡述 *</label>
-                            <input type="text" name="專長簡述" class="form-control" required placeholder="例如：擅長 FPS 遊戲、精通日文、有影片剪輯經驗等...">
+                            <input type="text" id="f_skill" class="form-control" required placeholder="例如：擅長 FPS 遊戲、精通日文、有影片剪輯經驗等...">
                         </div>
 
                         <div class="form-group">
                             <label>自我介紹與為什麼想加入寓意娛樂？ *</label>
-                            <textarea name="自我介紹與動機" class="form-control" required placeholder="請讓我們多認識你一點！分享你的實況風格、個性，或是未來想達成的目標。"></textarea>
+                            <textarea id="f_intro" class="form-control" required placeholder="請讓我們多認識你一點！分享你的實況風格、個性，或是未來想達成的目標。"></textarea>
                         </div>
                         
                         <div class="form-group" style="display: flex; align-items: center; gap: 10px; margin-bottom: 24px;">
@@ -243,49 +239,51 @@
                             <label for="consentCheck" style="margin-bottom: 0; font-size: 13.5px; color: var(--text-sub); cursor: pointer;">我已詳細閱讀徵選條件與注意事項，並保證所填寫資料均為屬實。</label>
                         </div>
 
-                        <button type="submit" class="btn-apply">送出報名表</button>
+                        <button type="button" onclick="sendEmail()" class="btn-apply">產生報名信件並寄出</button>
                     </form>
                 </div>
             </div>
         </main>
     </div>
 
-    <!-- 背景發送腳本 (防跳轉) -->
+    <!-- 原生 mailto 打包寄出腳本 -->
     <script>
-        document.getElementById('auditionForm').addEventListener('submit', function(e) {
-            e.preventDefault(); 
+        function sendEmail() {
+            const name = document.getElementById('f_name').value;
+            const birth = document.getElementById('f_birth').value;
+            const email = document.getElementById('f_email').value;
+            const discord = document.getElementById('f_discord').value;
+            const social = document.getElementById('f_social').value;
+            const video = document.getElementById('f_video').value;
+            const skill = document.getElementById('f_skill').value;
+            const intro = document.getElementById('f_intro').value;
+            const consent = document.getElementById('consentCheck').checked;
 
-            const form = e.target;
-            const formData = new FormData(form);
-            const btn = form.querySelector('button[type="submit"]');
-            const originalText = btn.innerText;
+            if(!name || !email || !discord || !video || !intro) {
+                alert('請完整填寫所有必填欄位！');
+                return;
+            }
 
-            btn.innerText = '履歷傳送中...';
-            btn.disabled = true;
+            if(!consent) {
+                alert('請勾選同意注意事項與保證條款！');
+                return;
+            }
 
-            fetch(form.action, {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            })
-            .then(response => {
-                if (response.ok) {
-                    alert('您的徵選報名已成功送出！若通過書面審查，我們將主動透過 Email 與您聯繫。');
-                    form.reset(); 
-                } else {
-                    alert('表單送出發生錯誤，請直接來信 moral.entertainment.co@gmail.com');
-                }
-            })
-            .catch(error => {
-                alert('網路連線異常，請確認網路狀態或直接來信 moral.entertainment.co@gmail.com');
-            })
-            .finally(() => {
-                btn.innerText = originalText;
-                btn.disabled = false;
-            });
-        });
+            const subject = encodeURIComponent(`【藝人徵選申請】${name} 的報名履歷`);
+            const body = encodeURIComponent(
+                `【MORAL 寓意娛樂 - 藝人常態徵選報名】\n\n` +
+                `1. 姓名/暱稱：${name}\n` +
+                `2. 生日：${birth}\n` +
+                `3. 聯絡信箱：${email}\n` +
+                `4. Discord ID：${discord}\n` +
+                `5. 現有社群連結：${social}\n` +
+                `6. 徵選影片連結：${video}\n` +
+                `7. 專長簡述：${skill}\n\n` +
+                `8. 自我介紹與動機：\n${intro}\n`
+            );
+
+            window.location.href = `mailto:moral.entertainment.co@gmail.com?subject=${subject}&body=${body}`;
+        }
     </script>
 </body>
 </html>
