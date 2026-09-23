@@ -4,9 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>藝人徵選 | MORAL 寓意娛樂</title>
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
+        :root {
+            --bg-deep: #0b0c10;
+            --surface: #1f2833;
+            --border-color: #2c353d;
+            --moral-purple: #c494f9;
+            --moral-pink: #fca4d4;
+            --moral-gradient: linear-gradient(135deg, #c494f9 0%, #fca4d4 100%);
+            --text-main: #ffffff;
+            --text-sub: #c5c6c7;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background-color: var(--bg-deep); color: var(--text-main); font-family: 'Noto Sans TC', sans-serif; display: flex; min-height: 100vh; }
+        
+        .layout { display: flex; width: 100%; min-height: 100vh; }
+        .sidebar { width: 260px; background: var(--surface); border-right: 1px solid var(--border-color); padding: 30px 20px; display: flex; flex-direction: column; justify-content: space-between; }
+        .sidebar-logo { width: 100%; max-width: 160px; margin-bottom: 30px; display: block; margin-left: auto; margin-right: auto; }
+        .nav-menu { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+        .nav-menu a { color: var(--text-sub); text-decoration: none; padding: 10px 16px; border-radius: 8px; display: block; transition: 0.2s; }
+        .nav-menu a:hover, .nav-menu a.active { background: rgba(196, 148, 249, 0.15); color: var(--moral-purple); font-weight: bold; }
+        
+        .main-content { flex: 1; padding: 40px; overflow-y: auto; max-width: 900px; }
+        
         .audition-hero {
             background: linear-gradient(rgba(14, 15, 23, 0.8), rgba(14, 15, 23, 0.9)), url('https://images.unsplash.com/photo-1598387993441-a364f854c3e1?q=80&w=1000&auto=format&fit=crop') center/cover;
             padding: 60px 40px;
@@ -23,24 +44,6 @@
         .section-block h2 i { color: var(--moral-purple); }
         .section-desc { color: var(--text-sub); line-height: 1.8; font-size: 15px; margin-bottom: 20px; }
 
-        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px; }
-        .feature-card { background: rgba(0,0,0,0.2); padding: 20px; border-radius: 8px; border-left: 3px solid var(--moral-pink); }
-        .feature-card h4 { color: #fff; margin-bottom: 8px; font-size: 16px; }
-        .feature-card p { color: var(--text-sub); font-size: 13.5px; line-height: 1.6; }
-
-        .req-list { list-style-type: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
-        .req-list li { padding-left: 24px; position: relative; font-size: 14.5px; color: var(--text-sub); line-height: 1.6; }
-        .req-list li::before { content: "✦"; position: absolute; left: 0; color: var(--moral-pink); font-size: 12px; top: 4px; }
-
-        .process-steps { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; margin-top: 24px; }
-        .step-box { flex: 1; min-width: 120px; text-align: center; background: rgba(196, 148, 249, 0.1); padding: 16px; border-radius: 8px; border: 1px solid rgba(196, 148, 249, 0.3); }
-        .step-num { font-size: 12px; color: var(--moral-pink); letter-spacing: 2px; margin-bottom: 8px; display: block; }
-        .step-name { font-size: 15px; color: #fff; font-weight: bold; }
-
-        .notice-list { list-style-type: decimal; padding-left: 20px; color: var(--text-sub); font-size: 14px; line-height: 1.8; }
-        .notice-list li { margin-bottom: 8px; }
-
-        /* 表單專屬樣式 */
         .form-container { background: rgba(0,0,0,0.2); padding: 32px; border-radius: 12px; border: 1px solid var(--moral-purple); margin-top: 24px; }
         .form-group { margin-bottom: 20px; }
         .form-group label { display: block; margin-bottom: 8px; color: var(--text-main); font-size: 14.5px; }
@@ -53,31 +56,26 @@
         
         .form-row { display: flex; gap: 20px; }
         .form-row .form-group { flex: 1; }
-        @media (max-width: 600px) { .form-row { flex-direction: column; gap: 0; } }
+        @media (max-width: 768px) { 
+            body { flex-direction: column; }
+            .layout { flex-direction: column; }
+            .sidebar { width: 100%; }
+            .form-row { flex-direction: column; gap: 0; } 
+        }
     </style>
 </head>
 <body>
     <div class="layout">
         <aside class="sidebar">
-            <a href="index.html"><img src="IMG_7225.png" alt="MORAL" class="sidebar-logo"></a>
-            <ul class="nav-menu">
-                <li><a href="index.html">首頁 / Home</a></li>
-                <li><a href="business.html">工商合作 / Business</a></li>
-                <li><a href="guidelines.html">社群規範 / Guidelines</a></li>
-                <li><a href="audition.html" class="active">藝人徵選 / Audition</a></li>
-                <li><a href="partner.html">合作夥伴 / Partner</a></li>
-            </ul>
-            <div class="official-socials">
-                <div class="social-title">OFFICIAL LINKS</div>
-                <div class="social-grid">
-                    <a href="https://www.facebook.com/profile.php?id=61594036010677" class="social-icon" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/moral.entertainment.co/" class="social-icon" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://www.threads.com/@moral.entertainment.co" class="social-icon" target="_blank"><i class="fa-brands fa-threads"></i></a>
-                    <a href="https://x.com/moralentertain" class="social-icon" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
-                    <a href="https://discord.gg/QrUsnqxXQa" class="social-icon" target="_blank"><i class="fa-brands fa-discord"></i></a>
-                    <a href="https://www.twitch.tv/moralentertainment" class="social-icon" target="_blank"><i class="fa-brands fa-twitch"></i></a>
-                    <a href="mailto:moral.entertainment.co@gmail.com" class="social-icon"><i class="fa-solid fa-envelope"></i></a>
-                </div>
+            <div>
+                <a href="index.html"><img src="IMG_7225.png" alt="MORAL" class="sidebar-logo"></a>
+                <ul class="nav-menu">
+                    <li><a href="index.html">首頁 / Home</a></li>
+                    <li><a href="business.html">工商合作 / Business</a></li>
+                    <li><a href="guidelines.html">社群規範 / Guidelines</a></li>
+                    <li><a href="audition.html" class="active">藝人徵選 / Audition</a></li>
+                    <li><a href="partner.html">合作夥伴 / Partner</a></li>
+                </ul>
             </div>
         </aside>
 
@@ -87,7 +85,6 @@
                 <p>我們期盼在接下來帶來更不一樣的內容與方向。<br>只要你有長才，我們都歡迎你加入寓意，成為溫暖世界的太陽！</p>
             </div>
 
-            <!-- 線上報名表單區塊 -->
             <div class="section-block" id="apply-form">
                 <h2><i class="fa-solid fa-file-signature"></i> 徵選報名表單</h2>
                 <div class="section-desc">請確實填寫以下資訊，才藝展示影片建議長度為 3-5 分鐘（無須露臉，展現您的聲音魅力與特質即可）。</div>
@@ -152,7 +149,6 @@
         </main>
     </div>
 
-    <!-- 背景發送腳本 (防跳轉) -->
     <script>
         document.getElementById('auditionForm').addEventListener('submit', function(e) {
             e.preventDefault(); 
