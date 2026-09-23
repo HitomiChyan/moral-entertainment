@@ -13,6 +13,9 @@
         .form-control { width: 100%; padding: 12px 16px; background: var(--bg-deep); border: 1px solid var(--border-color); border-radius: 8px; color: #fff; font-family: inherit; }
         .form-control:focus { outline: none; border-color: var(--moral-purple); }
         textarea.form-control { min-height: 150px; resize: vertical; }
+        
+        .btn-apply { display: block; width: 100%; text-align: center; background: var(--moral-gradient); color: #000; padding: 16px; border-radius: 8px; font-weight: 700; font-size: 16px; text-decoration: none; letter-spacing: 2px; border: none; cursor: pointer; transition: opacity 0.3s; }
+        .btn-apply:hover { opacity: 0.9; }
     </style>
 </head>
 <body>
@@ -44,80 +47,74 @@
         <main class="main-content">
             <h1 class="page-title">工商與專案合作</h1>
             <p style="margin-bottom: 40px; color: var(--text-sub); line-height: 1.8;">
-                無論是遊戲專場實況、情境置入、短影音授權，或是 IP 聯名企劃，請填寫下方表單或直接來信 <b>moral.entertainment.co@gmail.com</b>，專人將盡快與您聯繫。
+                無論是遊戲專場實況、情境置入、短影音授權，或是 IP 聯名企劃，請填寫下方表單，專人將盡快與您聯繫。
             </p>
 
             <div class="form-container">
-                <!-- 加上 id="bizForm" 供 JavaScript 綁定 -->
                 <form id="bizForm" action="https://formsubmit.co/moral.entertainment.co@gmail.com" method="POST">
-                    <input type="hidden" name="_subject" value="【MORAL 商務洽詢】來自官網的新合作需求！">
+                    <input type="hidden" name="_subject" value="【工商合作】來自官網的合作邀約！">
                     <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="false">
 
                     <div class="form-group">
-                        <label>貴單位 / 品牌名稱</label>
+                        <label>貴單位 / 品牌名稱 *</label>
                         <input type="text" name="品牌名稱" class="form-control" required placeholder="請輸入品牌名稱">
                     </div>
                     <div class="form-group">
-                        <label>聯絡信箱 Email</label>
+                        <label>聯絡信箱 Email *</label>
                         <input type="email" name="email" class="form-control" required placeholder="example@brand.com">
                     </div>
                     <div class="form-group">
                         <label>希望合作的藝人</label>
-                        <select name="合作對象" class="form-control">
-                            <option>由官方推薦適合人選</option>
-                            <option>愛爾梅爾 (Ailmer_Akuma)</option>
-                            <option>舞瞳喵 (HitomiCyan)</option>
-                            <option>條碼狐狸 (i1i1ifox)</option>
-                            <option>阿令啦 (rling0511)</option>
-                            <option>麥克關子 (mikeke0423)</option>
-                            <option>小鹿9 (0913lu)</option>
-                            <option>藍莓起司 (BlueberryCheese69)</option>
+                        <select name="希望合作藝人" class="form-control">
+                            <option value="由官方推薦適合人選">由官方推薦適合人選</option>
+                            <option value="艾爾默 (Ailmer_Akuma)">艾爾默 (Ailmer_Akuma)</option>
+                            <option value="0913lu (小鹿9)">0913lu (小鹿9)</option>
+                            <option value="阿令啦 (rling0511)">阿令啦 (rling0511)</option>
+                            <option value="條碼狐狸 (i1i1ifox)">條碼狐狸 (i1i1ifox)</option>
+                            <option value="藍莓起司 (BlueberryCheese69)">藍莓起司 (BlueberryCheese69)</option>
+                            <option value="麥克關子 (mikeke0423)">麥克關子 (mikeke0423)</option>
+                            <option value="舞瞳喵 (HitomiCyan)">舞瞳喵 (HitomiCyan)</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label>合作內容簡述</label>
-                        <textarea name="合作內容" class="form-control" required placeholder="請簡述預計推廣的產品、預算區間或檔期需求..."></textarea>
+                        <label>合作內容簡述 *</label>
+                        <textarea name="合作內容簡述" class="form-control" required placeholder="請簡述預計推廣的產品、預算區間或檔期需求..."></textarea>
                     </div>
-                    <button type="submit" class="btn-primary" style="width: 100%;">送出需求表單</button>
+                    <button type="submit" id="submitBtnBiz" class="btn-apply">送出需求表單</button>
                 </form>
             </div>
         </main>
     </div>
 
-    <!-- 加入 AJAX 背景發送腳本 -->
+    <!-- 背景發送腳本 (防跳轉) -->
     <script>
         document.getElementById('bizForm').addEventListener('submit', function(e) {
-            e.preventDefault(); // 阻止網頁跳轉
-
+            e.preventDefault(); 
             const form = e.target;
-            const formData = new FormData(form);
-            const btn = form.querySelector('button[type="submit"]');
+            const btn = document.getElementById('submitBtnBiz');
             const originalText = btn.innerText;
 
-            // 更改按鈕狀態防止重複點擊
-            btn.innerText = '傳送中...';
+            btn.innerText = '信件傳送中...';
             btn.disabled = true;
 
             fetch(form.action, {
                 method: 'POST',
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
+                body: new FormData(form),
+                headers: { 'Accept': 'application/json' }
             })
             .then(response => {
                 if (response.ok) {
                     alert('感謝您的來信！寓意娛樂商務團隊已收到您的合作需求，我們將盡快與您聯繫。');
-                    form.reset(); // 清空表單
+                    form.reset(); 
                 } else {
-                    alert('表單送出發生錯誤，請直接來信 moral.entertainment.co@gmail.com');
+                    alert('表單送出發生錯誤，請稍後再試。');
                 }
             })
             .catch(error => {
-                alert('網路連線異常，請確認網路狀態或直接來信 moral.entertainment.co@gmail.com');
+                alert('網路連線異常，請確認網路狀態。');
             })
             .finally(() => {
-                // 恢復按鈕狀態
                 btn.innerText = originalText;
                 btn.disabled = false;
             });
