@@ -63,6 +63,29 @@
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(196, 148, 249, 0.5);
         }
+
+        /* 側邊欄聯絡資訊與簡約頁尾樣式 */
+        .sidebar-contact-info {
+            margin-top: 24px;
+            padding-top: 16px;
+            border-top: 1px solid var(--border-color);
+            font-size: 12px;
+            color: var(--text-sub);
+            line-height: 1.6;
+        }
+        .sidebar-contact-info strong {
+            color: #fff;
+            display: block;
+            margin-bottom: 4px;
+        }
+        .site-footer {
+            margin-top: 60px;
+            padding: 30px 0;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            font-size: 12px;
+            color: var(--text-sub);
+        }
     </style>
 </head>
 <body>
@@ -87,6 +110,12 @@
                     <a href="https://www.twitch.tv/moralentertainment" class="social-icon" target="_blank"><i class="fa-brands fa-twitch"></i></a>
                     <a href="mailto:moral.entertainment.co@gmail.com" class="social-icon"><i class="fa-solid fa-envelope"></i></a>
                 </div>
+            </div>
+
+            <!-- 側邊欄清楚文字信箱 -->
+            <div class="sidebar-contact-info">
+                <strong>聯絡我們 / Contact</strong>
+                信箱：moral.entertainment.co@gmail.com
             </div>
         </aside>
 
@@ -143,10 +172,14 @@
                 <div class="portal-box">
                     <h3>BUSINESS INQUIRY PORTAL</h3>
                     <p>讓我們為您的品牌量身打造最精準、高轉換的虛擬娛樂行銷方案。</p>
-                    <!-- 請將 href 改為您的 Google 工商表單網址 -->
                     <a href="https://forms.gle/Nfq77Vc8n7cfUxFq8" target="_blank" class="btn-portal">填寫線上工商洽詢表單</a>
                 </div>
             </div>
+
+            <!-- 簡約版頁尾 -->
+            <footer class="site-footer">
+                <p>© 2026 MORAL Entertainment. All Rights Reserved.</p>
+            </footer>
         </main>
     </div>
 </body>
