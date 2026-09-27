@@ -40,7 +40,7 @@
         .notice-list { list-style-type: decimal; padding-left: 20px; color: var(--text-sub); font-size: 14px; line-height: 1.8; }
         .notice-list li { margin-bottom: 8px; }
 
-        /* 精美引導卡片區塊 (取代舊表單空白處) */
+        /* 精美引導卡片區塊 */
         .apply-cta-box {
             background: linear-gradient(135deg, rgba(14, 15, 23, 0.95), rgba(196, 148, 249, 0.1));
             padding: 50px 30px;
@@ -70,6 +70,30 @@
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(196, 148, 249, 0.5);
         }
+
+        /* 綠界審核必備：側邊欄常駐客服與底部頁尾樣式 */
+        .sidebar-contact-info {
+            margin-top: 24px;
+            padding-top: 16px;
+            border-top: 1px solid var(--border-color);
+            font-size: 12px;
+            color: var(--text-sub);
+            line-height: 1.6;
+        }
+        .sidebar-contact-info strong {
+            color: #fff;
+            display: block;
+            margin-bottom: 4px;
+        }
+        .site-footer {
+            margin-top: 60px;
+            padding: 30px 0;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            font-size: 12px;
+            color: var(--text-sub);
+            line-height: 1.8;
+        }
     </style>
 </head>
 <body>
@@ -94,6 +118,13 @@
                     <a href="https://www.twitch.tv/moralentertainment" class="social-icon" target="_blank"><i class="fa-brands fa-twitch"></i></a>
                     <a href="mailto:moral.entertainment.co@gmail.com" class="social-icon"><i class="fa-solid fa-envelope"></i></a>
                 </div>
+            </div>
+
+            <!-- 綠界必備：左側邊欄清楚文字聯絡方式 -->
+            <div class="sidebar-contact-info">
+                <strong>聯絡客服 / Contact</strong>
+                信箱：moral.entertainment.co@gmail.com<br>
+                時間：週一至週五 10:00 - 18:00
             </div>
         </aside>
 
@@ -209,10 +240,16 @@
                 <div class="apply-cta-box">
                     <h3>JOIN MORAL ENTERTAINMENT</h3>
                     <p>開啟您的虛擬星光旅程，讓世界看見屬於您的獨特寓言故事。</p>
-                    <!-- 請將下面的 href="您的Google表單網址" 替換成你們實際的表單連結 -->
                     <a href="https://forms.gle/ZW4fAMthA8jxeA487" target="_blank" class="btn-apply-portal">填寫線上徵選表單</a>
                 </div>
             </div>
+
+            <!-- 綠界必備：底端頁尾聯絡資訊 -->
+            <footer class="site-footer">
+                <p><strong>MORAL 寓意娛樂</strong></p>
+                <p>聯絡信箱：moral.entertainment.co@gmail.com ｜ 客服服務時間：週一至週五 10:00 - 18:00</p>
+                <p>© 2026 MORAL Entertainment. All Rights Reserved.</p>
+            </footer>
         </main>
     </div>
 </body>
