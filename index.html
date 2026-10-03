@@ -8,7 +8,7 @@
     <meta name="description" content="MORAL 寓意娛樂致力於結合故事與新世代影響力的藝人經紀團隊，提供直播主徵選與商務合作洽談。">
     <meta name="keywords" content="MORAL, 寓意娛樂, 虛擬藝人, VTuber, 藝人徵選, 經紀公司, 工商合作, 愛爾梅爾, 新人徵選, 直播主">
     <meta name="google-site-verification" content="RaYDh_GR9dEcD3tjQfLF-CEzcqpKJ5ZuU7wzQ6g_i1I" />
-        <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         .banner { background: var(--surface); padding: 40px; border-radius: 16px; border: 1px solid var(--border-color); margin-bottom: 40px; }
@@ -198,75 +198,18 @@
             </div>
 
             <h1 class="section-header">所屬旗下藝人</h1>
-            <div class="talent-list">
-                <a href="talent/talent-akuma.html" class="talent-card" style="border-color: rgba(196, 148, 249, 0.4);">
-                    <img src="images/ailmer.jpg" alt="Avatar" class="talent-avatar">
-                    <div>
-                        <h3 style="color: var(--moral-pink);">愛爾梅爾</h3>
-                        <p style="font-size: 12px; color: var(--text-sub);">Ailmer_Akuma</p>
-                        <span style="font-size: 11px; background: var(--moral-purple); color: #000; padding: 2px 6px; border-radius: 4px; display: inline-block; margin-top: 4px; font-weight: bold;">準備出道中</span>
-                    </div>
-                </a>
+            <div id="official-list" class="talent-list">
+                <!-- 動態載入所屬旗下藝人 -->
+                <p style="color: var(--text-sub);">載入中...</p>
             </div>
 
             <h1 class="section-header" style="margin-top: 60px;">旗下合作直播主</h1>
-            <div class="talent-list">
-                <!-- 1. 舞瞳喵 (已更新頭像為 01.png) -->
-                <a href="https://www.twitch.tv/hitomicyan0820" target="_blank" class="talent-card">
-                    <img src="images/01.png" alt="舞瞳喵" class="talent-avatar">
-                    <div>
-                        <h3 style="color: #fff;">舞瞳喵</h3>
-                        <p style="font-size: 12px; color: var(--text-sub);">HitomiCyan</p>
-                    </div>
-                </a>
-
-                <!-- 2. 條碼狐狸 -->
-                <a href="https://www.twitch.tv/i1i1ifox" target="_blank" class="talent-card">
-                    <img src="images/fox.png" alt="Avatar" class="talent-avatar">
-                    <div>
-                        <h3 style="color: #fff;">條碼狐狸</h3>
-                        <p style="font-size: 12px; color: var(--text-sub);">i1i1ifox</p>
-                    </div>
-                </a>
-
-                <!-- 3. 阿令啦 -->
-                <a href="https://www.twitch.tv/rling0511" target="_blank" class="talent-card">
-                    <img src="images/rling.png" alt="Avatar" class="talent-avatar">
-                    <div>
-                        <h3 style="color: #fff;">阿令啦</h3>
-                        <p style="font-size: 12px; color: var(--text-sub);">rling0511</p>
-                    </div>
-                </a>
-
-                <!-- 4. 麥克關子 -->
-                <a href="https://www.twitch.tv/mikeke0423" target="_blank" class="talent-card">
-                    <img src="images/MIKEKE.png" alt="Avatar" class="talent-avatar">
-                    <div>
-                        <h3 style="color: #fff;">麥克關子</h3>
-                        <p style="font-size: 12px; color: var(--text-sub);">mikeke0423</p>
-                    </div>
-                </a>
-
-                <!-- 5. 小鹿9 -->
-                <a href="https://www.twitch.tv/0913lu" target="_blank" class="talent-card">
-                    <img src="images/0913LU.png" alt="Avatar" class="talent-avatar">
-                    <div>
-                        <h3 style="color: #fff;">小鹿9</h3>
-                        <p style="font-size: 12px; color: var(--text-sub);">0913lu</p>
-                    </div>
-                </a>
-
-                <!-- 6. 藍莓起司 -->
-                <a href="https://www.youtube.com/@BlueberryCheese69" target="_blank" class="talent-card">
-                    <img src="images/BLUEBERRY.jpg" alt="Avatar" class="talent-avatar">
-                    <div>
-                        <h3 style="color: #fff;">藍莓起司</h3>
-                        <p style="font-size: 12px; color: var(--text-sub);">BlueberryCheese69</p>
-                    </div>
-                </a>
+            <div id="partner-list" class="talent-list">
+                <!-- 動態載入旗下合作直播主 -->
+                <p style="color: var(--text-sub);">載入中...</p>
             </div>
 
-            <!-- 營運團隊與對外窗口 (舞瞳喵頭像已更新為 01.png) -->
+            <!-- 營運團隊與對外窗口 -->
             <h1 class="section-header" style="margin-top: 60px;">營運聯絡窗口</h1>
             <div class="staff-card">
                 <div class="staff-avatar-wrap">
@@ -301,5 +244,81 @@
             </footer>
         </main>
     </div>
+
+    <!-- 引入 PapaParse 套件來解析 Google 試算表 CSV -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+    <script>
+        // ⬇️  Google 試算表所取得的 CSV 連結
+        const SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/1wI-D-x34-ky3O_uNGX-BbeVcWPo5ltEIjbwHfiTmrgY/edit?usp=sharing';
+
+        async function loadTalents() {
+            const officialContainer = document.getElementById('official-list');
+            const partnerContainer = document.getElementById('partner-list');
+
+            try {
+                Papa.parse(SHEET_CSV_URL, {
+                    download: true,
+                    header: true,
+                    complete: function(results) {
+                        const members = results.data;
+                        
+                        officialContainer.innerHTML = '';
+                        partnerContainer.innerHTML = '';
+
+                        members.forEach(member => {
+                            if (!member.name) return; // 略過空白行
+
+                            const card = document.createElement('a');
+                            card.href = member.link;
+                            card.className = 'talent-card';
+
+                            // 如果是所屬藝人，加上專屬邊框色彩
+                            if (member.category === 'official') {
+                                card.style.borderColor = 'rgba(196, 148, 249, 0.4)';
+                            }
+
+                            // 判斷是否為外部連結（如果是 http 開頭就開新視窗）
+                            if (member.link && member.link.startsWith('http')) {
+                                card.target = '_blank';
+                            } else {
+                                card.target = '_self';
+                            }
+
+                            // 準備標籤（例如：準備出道中）
+                            let badgeHTML = '';
+                            if (member.badge) {
+                                badgeHTML = `<span style="font-size: 11px; background: var(--moral-purple); color: #000; padding: 2px 6px; border-radius: 4px; display: inline-block; margin-top: 4px; font-weight: bold;">${member.badge}</span>`;
+                            }
+
+                            card.innerHTML = `
+                                <img src="${member.avatar}" alt="${member.name}" class="talent-avatar">
+                                <div>
+                                    <h3 style="color: ${member.category === 'official' ? 'var(--moral-pink)' : '#fff'};">${member.name}</h3>
+                                    <p style="font-size: 12px; color: var(--text-sub);">${member.id || ''}</p>
+                                    ${badgeHTML}
+                                </div>
+                            `;
+
+                            // 依照 category 放入對應的區塊
+                            if (member.category === 'official') {
+                                officialContainer.appendChild(card);
+                            } else if (member.category === 'partner') {
+                                partnerContainer.appendChild(card);
+                            }
+                        });
+                    },
+                    error: function(err) {
+                        console.error('讀取失敗：', err);
+                        officialContainer.innerHTML = '<p style="color: var(--text-sub);">無法載入名單。</p>';
+                        partnerContainer.innerHTML = '<p style="color: var(--text-sub);">無法載入名單。</p>';
+                    }
+                });
+            } catch (error) {
+                console.error('發生錯誤：', error);
+            }
+        }
+
+        loadTalents();
+    </script>
 </body>
 </html>
