@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>愛爾梅爾 Ailmer_Akuma | MORAL 寓意娛樂</title>
-    <link rel="stylesheet" href="style.css">
+    <!-- ⬇️ 修正：往上一層讀取根目錄的 style.css -->
+    <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         .profile-header { display: flex; gap: 40px; background: var(--surface); padding: 40px; border-radius: 16px; border: 1px solid var(--border-color); margin-bottom: 40px; align-items: flex-start; }
@@ -45,13 +46,14 @@
 <body>
     <div class="layout">
         <aside class="sidebar">
-            <a href="index.html"><img src="images/IMG_7225.png" alt="MORAL" class="sidebar-logo"></a>
+            <!-- ⬇️️ 修正 Logo 圖片路徑 -->
+            <a href="../index.html"><img src="../images/IMG_7225.png" alt="MORAL" class="sidebar-logo"></a>
             <ul class="nav-menu">
-                <li><a href="index.html">首頁 / Home</a></li>
-                <li><a href="business.html">工商合作 / Business</a></li>
-                <li><a href="guidelines.html">社群規範 / Guidelines</a></li>
-                <li><a href="audition.html">藝人徵選 / Audition</a></li>
-                <li><a href="partner.html">合作夥伴 / Partner</a></li>
+                <li><a href="../index.html">首頁 / Home</a></li>
+                <li><a href="../business.html">工商合作 / Business</a></li>
+                <li><a href="../guidelines.html">社群規範 / Guidelines</a></li>
+                <li><a href="../audition.html">藝人徵選 / Audition</a></li>
+                <li><a href="../partner.html">合作夥伴 / Partner</a></li>
             </ul>
             
             <div class="official-socials">
@@ -67,7 +69,6 @@
                 </div>
             </div>
 
-            <!-- 側邊欄清楚文字信箱 -->
             <div class="sidebar-contact-info">
                 <strong>聯絡我們 / Contact</strong>
                 信箱：moral.entertainment.co@gmail.com
@@ -75,10 +76,11 @@
         </aside>
 
         <main class="main-content">
-            <a href="index.html" style="color: var(--text-sub); text-decoration: none; display: inline-block; margin-bottom: 20px;"><i class="fa-solid fa-arrow-left"></i> 返回首頁</a>
+            <a href="../index.html" style="color: var(--text-sub); text-decoration: none; display: inline-block; margin-bottom: 20px;"><i class="fa-solid fa-arrow-left"></i> 返回首頁</a>
             
             <div class="profile-header">
-                <img src="images/ailmer.jpg" alt="愛爾梅爾" class="profile-avatar">
+                <!-- ⬇️ 修正頭像圖片路徑 -->
+                <img src="../images/ailmer.jpg" alt="愛爾梅爾" class="profile-avatar">
                 
                 <div class="profile-info">
                     <h1>愛爾梅爾 Ailmer_Akuma</h1>
@@ -107,7 +109,6 @@
                 </div>
             </div>
 
-            <!-- 簡約版頁尾 -->
             <footer class="site-footer">
                 <p>© 2026 MORAL Entertainment. All Rights Reserved.</p>
             </footer>
